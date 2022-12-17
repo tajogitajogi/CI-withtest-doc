@@ -1,7 +1,16 @@
 import re 
 import requests
 from PyPDF2 import PdfFileReader
-path = '01_ViPNet_Administrator_4_Быстрый_старт.pdf'
+import os
+
+def put():
+
+    for root, dirs, files in os.walk("."):
+        for filename in files:
+            a = re.fullmatch(r".+.pdf",filename) 
+            if a != None:
+                return filename
+path=put()
 #считает страницы
 def countpages(path):
     count=0
