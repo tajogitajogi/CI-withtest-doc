@@ -38,21 +38,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install flake8 pytest requests PyPDF2 
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: sobiraem
-        run: python testsborka.py
-      - name: pushim
-        run: git config --global user.email "tajogi@tajogi" && git config --global user.name "tajogi" && git checkout  main && git add html.html && git commit -m "Обновление" && git push origin main
       - name: ZIP
-        run: zip -r FINAL ./ -x *.py* -x *.git* -x __pycache__*?
+        run: zip -r FINAL ./ -x *.py* -x *.git* -x __pycache__*? -x html.html -x css.css
       - name: Send Telegram Message Ok
         uses: appleboy/telegram-action@master
         with:
