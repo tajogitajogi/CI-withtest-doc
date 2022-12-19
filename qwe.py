@@ -4,12 +4,13 @@ from PyPDF2 import PdfFileReader
 import os
 
 def put():
-
+    z=[]
     for root, dirs, files in os.walk("."):
         for filename in files:
             a = re.fullmatch(r".+.pdf",filename) 
             if a != None:
-                return filename
+                z.append(filename)
+    return z[-1]
 path=put()
 #считает страницы
 def countpages(path):
