@@ -2,7 +2,6 @@ import re
 import requests
 from PyPDF2 import PdfFileReader
 import os
-
 def put():
     z=[]
     for root, dirs, files in os.walk("."):
@@ -58,4 +57,6 @@ def reque():
             works = False
             break
     return(works)
-print(reque())
+print(reque()) 
+
+
