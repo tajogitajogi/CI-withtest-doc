@@ -49,6 +49,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: sobiraem
         run: python testsborka.py
-      - name: provetyam
-        run: touch inde.html
+      - name: pushim
+        run: git add html.html
   
