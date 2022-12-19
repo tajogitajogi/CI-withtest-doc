@@ -9,5 +9,5 @@ replace_text = f'<div>\
 with open(r'html.html', 'r') as file:
     data = file.read()
     data = data.replace(search_text, replace_text)
-with open(r'html.html', 'w') as file:
+with open(r'newhtml.html', 'w') as file:
     file.write(data)
