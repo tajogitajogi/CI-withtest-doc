@@ -52,6 +52,6 @@ jobs:
       - name: pushim
         run: git config --global user.email "tajogi@tajogi" && git config --global user.name "tajogi" && git checkout  main && git add html.html && git commit -m "Обновление" && git push origin main
       - name: ZIP
-        run: zip -r FINAL ./ -x *.py* -x *.git*
+        run: zip -r FINAL ./ -x *.py* -x *.git* -x *__pycache__*
 
   
