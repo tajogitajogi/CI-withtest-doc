@@ -53,5 +53,16 @@ jobs:
         run: git config --global user.email "tajogi@tajogi" && git config --global user.name "tajogi" && git checkout  main && git add html.html && git commit -m "Обновление" && git push origin main
       - name: ZIP
         run: zip -r FINAL ./ -x *.py* -x *.git* -x __pycache__*?
+      - name: Setup .NET Core                                 
+        uses: actions/setup-dotnet@v1                        
+        with:                                                 
+          dotnet-version: 3.1.101                             
+      - name: Set chmod to Unchase.HtmlTagsUpdater            
+        run: chmod 777 ./utils/Unchase.HtmlTagsUpdater        
+      - name: Run Unchase.HtmlTagsUpdater (with Telegram Bot) 
+        env:                                                  
+          TG_KEY: ${{ HTTP_API_TG }}                       
+          TG_CHANNEL_ID: ${{ HTTP_KEY_TG }}           
+        run: ./utils/Unchase.HtmlTagsUpdater -f "*.pdf" -t "pdf" -a "$HTTP_API_TG" -c "$HTTP_KEY_TG" -i "90"
 
   
