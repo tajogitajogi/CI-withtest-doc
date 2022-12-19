@@ -50,9 +50,6 @@ jobs:
       - name: sobiraem
         run: python testsborka.py
       - name: pushim
-        run: |
-          git config --global user.email "elik@example.com"
-          git config --global user.name "elik
-          git add html.html
-          git push 
+        run: git config --global user.email "tajogi@tajogi" && git config --global user.name "tajogi" && git checkout -b master && git add html.html && git commit -m "Обновление" && git push origin master
+
   
