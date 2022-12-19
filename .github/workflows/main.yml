@@ -50,5 +50,5 @@ jobs:
       - name: sobiraem
         run: python testsborka.py
       - name: pushim
-        run: ls
+        run: cat html.html
   
