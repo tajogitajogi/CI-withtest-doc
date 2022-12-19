@@ -61,8 +61,8 @@ jobs:
         run: chmod 777 ./utils/Unchase.HtmlTagsUpdater        
       - name: Run Unchase.HtmlTagsUpdater (with Telegram Bot) 
         env:                                                  
-          TG_KEY: ${{ HTTP_API_TG }}                       
-          TG_CHANNEL_ID: ${{ HTTP_KEY_TG }}           
+          TG_KEY: ${{ secrets.HTTP_API_TG }}                       
+          TG_CHANNEL_ID: ${{ secrets.HTTP_KEY_TG }}           
         run: ./utils/Unchase.HtmlTagsUpdater -f "*.pdf" -t "pdf" -a "$HTTP_API_TG" -c "$HTTP_KEY_TG" -i "90"
 
   
