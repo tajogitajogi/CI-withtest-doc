@@ -58,11 +58,8 @@ jobs:
         with:
           to: ${{ secrets.HTTP_KEY_TG }}
           token: ${{ secrets.HTTP_API_TG }}
-          format: markdown
-          message: |
-            *1st line of your message with bold*
-            *2nd line of your message with bold, too*
-            Application: *Write something to be put inside your message*. The below lines still are part of your message.          
+          document: FINAL.zip
+    
 
 
   
