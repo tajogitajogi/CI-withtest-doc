@@ -1,5 +1,5 @@
 import codecs
-from test import put
+from qwe import put
 f=codecs.open("html.html", 'r')
 a=f.read()
 search_text ='</body>'
